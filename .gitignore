@@ -1,0 +1,50 @@
+# Ignore Python bytecode and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore virtual environment and dependency files
+venv/
+.env
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore large dataset files
+data/raw/
+data/processed/
+
+# Ignore machine learning model files and outputs
+models/
+outputs/
+*.h5
+*.pkl
+*.csv  # If datasets are large and should not be committed
+
+# Ignore logs and temporary files
+logs/
+*.log
+
+# Ignore system files (macOS & Windows)
+.DS_Store
+Thumbs.db
+
+# Ignore IDE and development tool settings
+.idea/
+.vscode/
+.spyderproject/
+.spyproject/
+
+# Ignore coverage and testing artifacts
+.tox/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Ignore documentation builds
+docs/_build/
