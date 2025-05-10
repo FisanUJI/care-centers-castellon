@@ -1,0 +1,9 @@
+esda==2.5.1
+folium
+geopandas==0.14.4
+osmnx==1.9.3
+pandas==2.2.2
+matplotlib==3.8.4
+networkx==3.2.1
+numpy==1.26.4
+shapely==2.0.4
