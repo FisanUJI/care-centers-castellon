@@ -19,8 +19,13 @@ def generate_castellon_map(output_path="data/images/castellon_map.html"):
         location=CASTELLON_CENTER,
         zoom_start=CASTELLON_ZOOM,
         control_scale=True,
-        tiles=["OpenStreetMap",'Stamen Terrain'] # Optional: 'Stamen Terrain', 'CartoDB positron', etc.
+        tiles="OpenStreetMap" # Optional: 'Stamen Terrain', 'CartoDB positron', etc.
     )
+
+    # Add additional tile layers
+    folium.TileLayer('Stamen Terrain').add_to(castellon_map)
+    folium.TileLayer('CartoDB positron').add_to(castellon_map)
+    folium.TileLayer('CartoDB dark_matter').add_to(castellon_map)
 
     # Load GeoJSON data
     geo_path = Path(GEOJSON_PATH)
