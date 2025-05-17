@@ -18,4 +18,13 @@ def generate_castellon_map():
             'fillOpacity': 0.5
         }
     ).add_to(castellon_map)
+    folium.Marker(
+        location=CASTELLON_CENTER,
+        popup="Castellon de la Plana",
+        icon=folium.Icon(color='blue')
+    ).add_to(castellon_map)
+    folium.LayerControl().add_to(castellon_map)
+    # Save the map to an HTML file
+    # castellon_map.save("../data/images/castellon_map.html")
     return castellon_map
+

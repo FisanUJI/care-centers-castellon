@@ -1,4 +1,12 @@
 import pytest
+import os
+import sys
+
+# Go up to the project root from the 'test' directory
+repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if repo_root not in sys.path:
+    sys.path.append(repo_root)
+
 from src.data import fetch_osm_data, clean_data
 
 def test_fetch_osm_data():
