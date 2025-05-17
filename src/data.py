@@ -2,36 +2,21 @@ import osmnx as ox
 import geopandas as gpd
 import pandas as pd
 
-def fetch_osm_data(city_name, network_types=None):
+def fetch_osm_data(city_name, network_type='drive'):
     """
     Fetch OpenStreetMap data for the given city and network types.
     Args:
         city_name (str): Name of the city.
-        network_types (list or str): List of network types to fetch (e.g., ['drive', 'walk'] or 'drive').
+        network_types (str): Type of network to fetch (e.g., 'drive', 'walk').
     Returns:
-        dict: {network_type: (gdf_nodes, gdf_edges)}
+        gdf_nodes, gdf_edges: Geodataframes for nodes and edges.
     """
-    if network_types is None:
-        network_types = ['drive']  # Default to 'drive' if no network types are provided
-    
-    # If a single string is given, convert to list
-    if isinstance(network_types, str):
-        network_types = [network_types]
-
-    results = {}
-    for net_type in network_types:
-        graph = ox.graph_from_place(city_name, network_type=net_type)
-        gdf_nodes, gdf_edges = ox.graph_to_gdfs(graph)
-        results[net_type] = (gdf_nodes, gdf_edges)
-    return results
+    graph = ox.graph_from_place(city_name, network_type=network_type)
+    gdf_nodes, gdf_edges = ox.graph_to_gdfs(graph)
+    return gdf_nodes, gdf_edges
 
 # Example usage:
-# data = fetch_osm_data("Castellón, Valencian Community, Spain", network_types=['drive', 'walk']) 
-# OR
 # data = fetch_osm_data("Castellón, Valencian Community, Spain", network_types='drive')
-# drive_nodes, drive_edges = data['drive']
-# walk_nodes, walk_edges = data['walk']
-
 
 def clean_data(gdf_edges):
     """
