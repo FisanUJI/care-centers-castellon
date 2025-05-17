@@ -3,7 +3,7 @@
 # Paths
 RAW_DATA_PATH = "../data/raw/"
 PROCESSED_DATA_PATH = "../data/processed/"
-GEOJSON_PATH = "../data/raw/georef-spain-provincia.geojson"
+GEOJSON_PATH = "./data/georef-spain-provincia.geojson"
 IMAGES_PATH = "../data/images/"
 
 # Map settings
