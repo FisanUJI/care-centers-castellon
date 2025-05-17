@@ -1,34 +1,3 @@
-# import folium
-# from src.config import CASTELLON_CENTER, CASTELLON_ZOOM, GEOJSON_PATH
-
-# def generate_castellon_map():
-#     """
-#     Generate an interactive map of Castellon de la Plana.
-#     Returns:
-#         folium.Map: A Folium map object.
-#     """
-#     castellon_map = folium.Map(location=CASTELLON_CENTER, zoom_start=CASTELLON_ZOOM)
-#     folium.GeoJson(
-#         GEOJSON_PATH,
-#         name="Castellon Boundary",
-#         style_function=lambda x: {
-#             'fillColor': 'grey',
-#             'color': 'black',
-#             'weight': 2,
-#             'fillOpacity': 0.5
-#         }
-#     ).add_to(castellon_map)
-#     folium.Marker(
-#         location=CASTELLON_CENTER,
-#         popup="Castellon de la Plana",
-#         icon=folium.Icon(color='blue')
-#     ).add_to(castellon_map)
-#     folium.LayerControl().add_to(castellon_map)
-
-#     # Save the map to an HTML file
-#     castellon_map.save("../data/images/castellon_map.html")
-#     return castellon_map
-
 import folium
 import json
 from pathlib import Path
@@ -50,7 +19,7 @@ def generate_castellon_map(output_path="data/images/castellon_map.html"):
         location=CASTELLON_CENTER,
         zoom_start=CASTELLON_ZOOM,
         control_scale=True,
-        tiles="OpenStreetMap"
+        tiles=["OpenStreetMap",'Stamen Terrain'] # Optional: 'Stamen Terrain', 'CartoDB positron', etc.
     )
 
     # Load GeoJSON data
