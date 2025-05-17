@@ -9,7 +9,7 @@ def generate_castellon_map():
     """
     castellon_map = folium.Map(location=CASTELLON_CENTER, zoom_start=CASTELLON_ZOOM)
     folium.GeoJson(
-        "../data/raw/georef-spain-provincia.geojson",
+        GEOJSON_PATH,
         name="Castellon Boundary",
         style_function=lambda x: {
             'fillColor': 'grey',
