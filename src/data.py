@@ -4,14 +4,17 @@ import pandas as pd
 
 def fetch_osm_data(city_name, network_types=['drive']):
     """
-    Fetch OpenStreetMap data for the given city.
+    Fetch OpenStreetMap data for the given city and network types.
     Args:
         city_name (str): Name of the city.
-        network_type (list or str): List of network types to fetch (e.g., ['drive', 'walk']).
+        network_types (list or str): List of network types to fetch (e.g., ['drive', 'walk'] or 'drive').
     Returns:
-        dict: {network_type: (gdf_nodes, gdf_edges)}.
+        dict: {network_type: (gdf_nodes, gdf_edges)}
     """
-    if isinstance(network_types, str):   # Check if network_type is a string
+    import osmnx as ox
+
+    # If a single string is given, convert to list
+    if isinstance(network_types, str):
         network_types = [network_types]
 
     results = {}
