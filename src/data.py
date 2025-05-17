@@ -23,5 +23,5 @@ def clean_data(gdf_edges):
     Returns:
         GeoDataFrame: Cleaned edge data.
     """
-    columns_to_drop = ["bridge", "maxspeed", "tunnel", "junction", "width", "access", "service"]
+    columns_to_drop = ["lanes", "ref", "bridge", "maxspeed", "tunnel", "junction", "width", "access", "service"]
     return gdf_edges.drop(columns=columns_to_drop, errors='ignore')
