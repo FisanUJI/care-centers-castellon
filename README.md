@@ -4,7 +4,7 @@
 This project analyzes the spatial distribution of existing care centers in Castellón de la Plana using geospatial Python tools. The objective is to assess coverage and accessibility across different neighborhoods.
 
 ## 🛠 Tools & Technologies
-- **Python**: geopandas, matplotlib, pandas, osmnx
+- **Python**: geopandas, matplotlib, pandas, shapely, osmnx, folium
 - **Dataset**: OpenStreetMap & municipal geospatial datasets
 - **GIS**: QGIS (for data verification)
 - **Jupyter Notebook**: Interactive data exploration & model development
